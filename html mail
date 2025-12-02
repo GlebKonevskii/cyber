@@ -1,1 +1,225 @@
-66u
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Срочное уведомление - Госуслуги</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #0d47a1;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+            font-size: 14px;
+        }
+        .content {
+            padding: 30px;
+        }
+        .alert-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .alert-box h3 {
+            color: #856404;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .info-box {
+            background: #e7f3ff;
+            border: 1px solid #b3d7ff;
+            border-radius: 6px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        .info-box ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .info-box li {
+            margin-bottom: 8px;
+        }
+        .button-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #0d47a1;
+            color: white;
+            text-decoration: none;
+            padding: 15px 40px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        .cta-button:hover {
+            background: #0a3a8a;
+        }
+        .warning-box {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .contact-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 13px;
+        }
+        .timestamp {
+            color: #888;
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        .training-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h1>🇷🇺 Портал Госуслуг</h1>
+            <p>Единый портал государственных и муниципальных услуг</p>
+        </div>
+        
+        <div class="content">
+            <div class="training-notice">
+                🎓 УЧЕБНЫЙ ТРЕНИНГ ПО КИБЕРБЕЗОПАСНОСТИ<br>
+                <small>Это имитационное фишинговое письмо для образовательных целей</small>
+            </div>
+            
+            <div class="timestamp">
+                Дата отправки: <strong>05.12.2024 14:30 (МСК)</strong><br>
+                Идентификатор уведомления: <strong>ГУ-7845-2024</strong>
+            </div>
+            
+            <h2>Уважаемый пользователь,</h2>
+            
+            <p>В связи с техническими работами и обновлением системы безопасности портала Госуслуг требуется выполнить дополнительную проверку вашей учетной записи.</p>
+            
+            <div class="alert-box">
+                <h3>⚠️ Требуется подтверждение данных</h3>
+                <p>Для обеспечения безопасности и предотвращения несанкционированного доступа необходимо обновить данные для входа в личный кабинет.</p>
+            </div>
+            
+            <div class="info-box">
+                <h3>📋 Информация о необходимых действиях:</h3>
+                <ul>
+                    <li><strong>Войдите в личный кабинет</strong> по ссылке ниже</li>
+                    <li><strong>Подтвердите ваши контактные данные</strong> (номер телефона или СНИЛС)</li>
+                    <li><strong>Обновите пароль</strong> для входа в систему</li>
+                    <li><strong>Настройте двухфакторную аутентификацию</strong> (рекомендуется)</li>
+                </ul>
+                
+                <p style="margin-top: 15px; padding: 10px; background: #fff3cd; border-radius: 4px;">
+                    <strong>⏰ Срок выполнения:</strong> До 10.12.2024 23:59 (МСК)<br>
+                    После указанной даты доступ к некоторым услугам может быть временно ограничен.
+                </p>
+            </div>
+            
+            <div class="warning-box">
+                <strong>❗ Важно:</strong> Если вы не совершали вход в личный кабинет в последние 48 часов или заметили подозрительную активность, выполните проверку в обязательном порядке.
+            </div>
+            
+            <div class="button-container">
+                <div class="security-badge">
+                    🔐 Безопасное соединение
+                </div>
+                <br>
+                <a href="gosuslugi-login.html" class="cta-button">
+                    🔒 Перейти к проверке учетной записи
+                </a>
+                <p style="font-size: 12px; color: #666; margin-top: 10px;">
+                    Ссылка действительна в течение 72 часов
+                </p>
+            </div>
+            
+            <p>После завершения проверки вы получите подтверждение на указанную электронную почту и сможете продолжить пользоваться всеми услугами портала без ограничений.</p>
+            
+            <div class="contact-info">
+                <p><strong>Служба поддержки портала Госуслуг</strong></p>
+                <p>📞 Телефон: 8-800-100-70-10 (бесплатно по России)<br>
+                📧 Email: <a href="mailto:support@gosuslugi.ru" style="color: #0d47a1;">support@gosuslugi.ru</a><br>
+                🕒 Часы работы: круглосуточно</p>
+                
+                <p style="margin-top: 15px; font-size: 11px; color: #888;">
+                    <em>Это письмо отправлено автоматически. Пожалуйста, не отвечайте на него.</em>
+                </p>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2024 Министерство цифрового развития, связи и массовых коммуникаций Российской Федерации</p>
+            <p>
+                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">Политика конфиденциальности</a> | 
+                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">Обработка персональных данных</a> | 
+                <a href="#" style="color: #666; text-decoration: none; margin: 0 10px;">Помощь</a>
+            </p>
+            <p style="font-size: 10px; margin-top: 15px; color: #999;">
+                Это письмо содержит официальную информацию от портала Госуслуг.<br>
+                Для защиты от мошенников проверяйте адрес отправителя: <strong>noreply@gosuslugi.ru</strong>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
